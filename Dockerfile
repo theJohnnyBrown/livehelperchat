@@ -16,6 +16,9 @@ RUN service apache2 restart
 
 # Copy the lhc_web folder to /var/www/html
 COPY ./lhc_web /var/www/html
+RUN chown -R www-data /var/www/html/cache
+RUN chown -R www-data /var/www/html/settings
+RUN chown -R www-data /var/www/html/var
 WORKDIR /var/www/html
 
 EXPOSE 80
